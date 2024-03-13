@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoPacCalc</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #FFA500;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #FFA500;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #888888;
+            margin: 30px auto;
+        }
+
+        .left-side {
+            flex-basis: 30%;
+            margin-right: 50px;
+            /* background-color: #F2E7D5; */
+            padding: 25px;
+            border: solid #ff8400;
+            box-shadow: 0px 0px 10px #ffa559;
+        }
+
+        .right-side {
+            flex-basis: 65%;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .skills li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #d9d9d9;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px #f2921d;
+        }
+    </style>
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div>
+            <span style="font-weight: bold; font-size: 1.5rem; color: white;">EcoPacCalc</span>
+        </div>
+        <div>
+            <a href="popular.html">Popular</a>
+            <a href="form.html">Calculate</a>
+            <a href="../index.html">Home</a>
+            <a href="login.html" style="background-color: white; color: #FFA500;">LogOut</a>
+        </div>
+    </nav>
+
+    <!-- Information Display to user -->
+
+    <div class="flex flex-col items-center justify-start">
+        <button id="downloadBtn"
+            class="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 ml-500 p-3 mt-3 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span>Download</span>
+        </button>
+
+        <div class="container" id="meals">
+            <div class="left-side">
+                <img src="../images/plastic.jpg" alt="Recipe Image" class="profile-image" />
+                <h1><strong>Packaging Material : Plastic</strong></h1>
+                <h2><strong>Sustainability: Low</strong></h2>
+                <ul class="skills">
+                    <li>Carbon Footprint: 250</li>
+                    <li>Recyclability: 20</li>
+                    <li>Biodegradability: 5</li>
+                    <li>Energy Consumption: 150</li>
+                    <li>Water Usage: 300</li>
+                    <li>Raw Material Source: Petrochemicals</li>
+                    <li>Waste Generation: 15</li>
+                    <li>Environmental Impact Score: 4.2</li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <h1>
+                    <strong><u>Summary</u></strong>
+                </h1>
+                <br />
+                <p>Plastic is a widely used packaging material due to its versatility and affordability. It offers
+                    various advantages such as durability, flexibility, and lightweight properties.</p>
+                <br />
+                <h2>
+                    <strong><u>Plastic packaging comes in different forms, including:</u></strong>
+                </h2>
+                <br />
+                <ul>
+                    <li>Plastic bags</li>
+                    <li>Plastic containers</li>
+                    <li>Plastic bottles</li>
+                    <li>Plastic films</li>
+                    <li>Plastic wraps</li>
+                    <li>Plastic clamshells</li>
+                    <li>Plastic pouches</li>
+                    <li>Plastic trays</li>
+                </ul>
+                <br />
+                <p>Plastic packaging is commonly used across industries for various products, including food, beverages,
+                    cosmetics, household goods, and electronics. However, it poses significant environmental challenges,
+                    such as pollution, littering, and concerns about microplastics.</p>
+                <p><u><strong>Efforts are being made to improve the sustainability of plastic packaging through
+                            innovations such
+                            as:</strong></u></p>
+                <ul>
+                    <li>Biodegradable plastics</li>
+                    <li>Recycled plastics</li>
+                    <li>Compostable plastics</li>
+                    <li>Reducing plastic usage and promoting reuse</li>
+                    <li>Improving recycling infrastructure</li>
+                </ul>
+                <p>It's essential for businesses and consumers to consider the environmental impact of plastic packaging
+                    and explore alternatives to minimize their ecological footprint.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        useCORS: true;
+
+        window.onload = function () {
+            const btn = document.getElementById("downloadBtn");
+            btn.addEventListener("click", () => {
+                const recipe = this.document.getElementById("meals");
+                const options = {
+                    margin: 0,
+                    filename: "recipe.pdf",
+                    image: { type: "jpeg", quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true },
+                    jsPDF: { format: "letter", orientation: "landscape" },
+                };
+                html2pdf().from(recipe).set(options).save();
+            });
+        };
+    </script>
+</body>
+
+</html>

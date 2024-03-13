@@ -1,0 +1,75 @@
+[
+    {
+      "PackagingMaterial": "Paper",
+      "CarbonFootprint": 150,
+      "Recyclability": 80,
+      "Biodegradability": 90,
+      "EnergyConsumption": 200,
+      "WaterUsage": 500,
+      "RawMaterialSource": "FSC Certified",
+      "WasteGeneration": 20,
+      "EnvironmentalImpactScore": 8.5,
+      "Output": "High"
+    },
+    {
+      "PackagingMaterial": "Plastic",
+      "CarbonFootprint": 250,
+      "Recyclability": 20,
+      "Biodegradability": 5,
+      "EnergyConsumption": 150,
+      "WaterUsage": 300,
+      "RawMaterialSource": "Petrochemicals",
+      "WasteGeneration": 15,
+      "EnvironmentalImpactScore": 4.2,
+      "Output": "Low"
+    },
+    {
+      "PackagingMaterial": "Glass",
+      "CarbonFootprint": 180,
+      "Recyclability": 70,
+      "Biodegradability": 0,
+      "EnergyConsumption": 300,
+      "WaterUsage": 800,
+      "RawMaterialSource": "Sand",
+      "WasteGeneration": 25,
+      "EnvironmentalImpactScore": 6.7,
+      "Output": "Medium"
+    },
+    {
+      "PackagingMaterial": "Biodegradable Plastics",
+      "CarbonFootprint": 200,
+      "Recyclability": 40,
+      "Biodegradability": 80,
+      "EnergyConsumption": 180,
+      "WaterUsage": 350,
+      "RawMaterialSource": "Plant-based",
+      "WasteGeneration": 18,
+      "EnvironmentalImpactScore": 7.3,
+      "Output": "Medium"
+    },
+    {
+      "PackagingMaterial": "Metal",
+      "CarbonFootprint": 300,
+      "Recyclability": 90,
+      "Biodegradability": 10,
+      "EnergyConsumption": 250,
+      "WaterUsage": 600,
+      "RawMaterialSource": "Ore Mining",
+      "WasteGeneration": 30,
+      "EnvironmentalImpactScore": 7.8,
+      "Output": "High"
+    },
+    {
+      "PackagingMaterial": "Paper Board",
+      "CarbonFootprint": 160,
+      "Recyclability": 75,
+      "Biodegradability": 85,
+      "EnergyConsumption": 220,
+      "WaterUsage": 480,
+      "RawMaterialSource": "FSC Certified",
+      "WasteGeneration": 22,
+      "EnvironmentalImpactScore": 8.1,
+      "Output": "High"
+    }
+  ]
+  

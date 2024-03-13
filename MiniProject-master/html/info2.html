@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoPacCalc</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #FFA500;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #FFA500;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #888888;
+            margin: 30px auto;
+        }
+
+        .left-side {
+            flex-basis: 30%;
+            margin-right: 50px;
+            /* background-color: #F2E7D5; */
+            padding: 25px;
+            border: solid #ff8400;
+            box-shadow: 0px 0px 10px #ffa559;
+        }
+
+        .right-side {
+            flex-basis: 65%;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .skills li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #d9d9d9;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px #f2921d;
+        }
+    </style>
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div>
+            <span style="font-weight: bold; font-size: 1.5rem; color: white;">EcoPacCalc</span>
+        </div>
+        <div>
+            <a href="popular.html">Popular</a>
+            <a href="form.html">Calculate</a>
+            <a href="../index.html">Home</a>
+            <a href="login.html" style="background-color: white; color: #FFA500;">LogOut</a>
+        </div>
+    </nav>
+
+    <!-- Information Display to user -->
+
+    <div class="flex flex-col items-center justify-start">
+        <button id="downloadBtn"
+            class="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 ml-500 p-3 mt-3 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span>Download</span>
+        </button>
+
+        <div class="container" id="meals">
+            <div class="left-side">
+                <img src="../images/glass.jpg" alt="Recipe Image" class="profile-image" />
+                <h1><strong>Packaging Material : Glass</strong></h1>
+                <h2><strong>Sustainability: Medium</strong></h2>
+                <ul class="skills">
+                    <li>Carbon Footprint: 180</li>
+                    <li>Recyclability: 70</li>
+                    <li>Biodegradability: 0</li>
+                    <li>Energy Consumption: 300</li>
+                    <li>Water Usage: 800</li>
+                    <li>Raw Material Source: Sand</li>
+                    <li>Waste Generation: 25</li>
+                    <li>Environmental Impact Score: 6.7</li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <h1><strong><u>Summary</u></strong></h1>
+                <br />
+                <p>Glass is a versatile and eco-friendly packaging material commonly used in various industries. It
+                    offers several advantages such as:</p>
+                <ul>
+                    <li>Excellent barrier properties: Glass provides an impermeable barrier, protecting the contents
+                        from moisture, air, and odors.</li>
+                    <li>Recyclability: Glass is infinitely recyclable without loss of quality, making it a sustainable
+                        choice for packaging.</li>
+                    <li>Non-reactive: Glass does not react with the contents, preserving the taste and quality of food
+                        and beverages.</li>
+                    <li>Durable and long-lasting: Glass packaging is sturdy and resistant to temperature fluctuations,
+                        ensuring product integrity during storage and transportation.</li>
+                    <li>Aesthetic appeal: Glass containers offer a premium look and feel, enhancing the perceived value
+                        of the product.</li>
+                </ul>
+                <br />
+                <p><u><strong>Common glass packaging products include:</strong></u></p>
+                <ul>
+                    <li>Glass bottles</li>
+                    <li>Glass jars</li>
+                    <li>Glass vials</li>
+                    <li>Glass containers</li>
+                    <li>Glass packaging for cosmetics and perfumes</li>
+                </ul>
+                <br />
+                <p>While glass packaging offers many benefits, it also has some limitations, such as fragility and
+                    weight. However, advancements in glass manufacturing and packaging techniques continue to improve
+                    its sustainability and performance.</p>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+            integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+            useCORS: true;
+
+            window.onload = function () {
+                const btn = document.getElementById("downloadBtn");
+                btn.addEventListener("click", () => {
+                    const recipe = this.document.getElementById("meals");
+                    const options = {
+                        margin: 0,
+                        filename: "recipe.pdf",
+                        image: { type: "jpeg", quality: 0.98 },
+                        html2canvas: { scale: 2, useCORS: true },
+                        jsPDF: { format: "letter", orientation: "landscape" },
+                    };
+                    html2pdf().from(recipe).set(options).save();
+                });
+            };
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPacCalc</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="center">
+        <div class="container">
+            <div class="text">
+            Welcome! Please SignUp to continue
+            </div>
+
+            <form id="registrationForm">
+                <div class="data">
+                    <label>Email</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="data">
+                    <label>Password</label>
+                    <input type="password" id="password" required />
+                </div>
+                <div class="data">
+                    <label>Confirm password</label>
+                    <input type="text" required />
+                </div>
+                <div class="btn">
+                    <div class="inner"></div>
+                    <button type="submit">Register</button>
+                </div>
+                <!-- <div class="btn">
+                    <div class="inner"></div>
+                    <button onclick="signInWithGoogle()">Sign In With Google</button>
+                </div> -->
+                <!-- <div class="btn">
+                    <div class="inner"></div>
+                    <button>Login</button>
+                </div>
+                <div class="login">
+                    Not a member? <a href="https://mail.google.com">Login with google</a>
+                </div> -->
+            </form>
+            <div class="btn">
+                <div class="inner"></div>
+                <a href="SignIn.html"><button type="submit">Already have an account? SignIn to continue!</button></a>
+            </div>
+            <div class="btn">
+                <div class="inner"></div>
+                <button id="google">Sign In With Google</button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script> -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+        // Firebase configuration (replace with your own)
+        const firebaseConfig = {
+            apiKey: "AIzaSyCElhLXScyDKxvyU189TNsCZMcKPP_4lLQ",
+            authDomain: "packaging-calculator.firebaseapp.com",
+            projectId: "packaging-calculator",
+            storageBucket: "packaging-calculator.appspot.com",
+            messagingSenderId: "680076265911",
+            appId: "1:680076265911:web:6ac65759e976cdb3018032",
+            measurementId: "G-J1TV4ENJ1T"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+
+        // Register user function
+        const registerUser = async (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                console.log("User signed up:", user);
+                window.location.href = "../index.html"
+            } catch (error) {
+                console.error("Error signing up:", error.message);
+                alert("Please Register Again!")
+            }
+        };
+
+        const GoogleAuth = new GoogleAuthProvider();
+
+        const signInWithGoogle = () => {
+            signInWithPopup(auth, GoogleAuth).then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                window.location.href = "../index.html"
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });;
+        }
+
+        // Attach event listener to form
+        document.getElementById('registrationForm').addEventListener('submit', registerUser);
+        document.getElementById('google').addEventListener("click", signInWithGoogle);
+    </script>
+</body>
+
+</html>

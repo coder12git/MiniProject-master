@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPacCalc</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <div class="center">
+        <div class="container">
+            <div class="text">Welcome! Please Login to continue</div>
+            <form id="loginForm">
+                <div class="data">
+                    <label>Email</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="data">
+                    <label>Password</label>
+                    <input type="password" id="password" required />
+                </div>
+                <div class="btn">
+                    <div class="inner"></div>
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+            <div class="btn">
+                <div class="inner"></div>
+                <a href="login.html"><button type="submit">Don't have an account? SignUp to continue!</button></a>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCElhLXScyDKxvyU189TNsCZMcKPP_4lLQ",
+            authDomain: "packaging-calculator.firebaseapp.com",
+            projectId: "packaging-calculator",
+            storageBucket: "packaging-calculator.appspot.com",
+            messagingSenderId: "680076265911",
+            appId: "1:680076265911:web:6ac65759e976cdb3018032",
+            measurementId: "G-J1TV4ENJ1T"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        // Sign in user function
+        const signInUser = async (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                console.log("User signed in:", user);
+                // Redirect user after successful sign in
+                window.location.href = "../index.html";
+            } catch (error) {
+                console.error("Error signing in:", error.message);
+                alert("Invalid email or password. Please try again.");
+            }
+        };
+
+        // Attach event listener to form
+        document.getElementById('loginForm').addEventListener('submit', signInUser);
+    </script>
+</body>
+</html>

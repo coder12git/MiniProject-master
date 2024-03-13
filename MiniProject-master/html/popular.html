@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPacCalc</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #FFA500;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #FFA500;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 8px;
+            text-align: center;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .recipe-card {
+            max-width: 300px;
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-left: 6px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            margin-right: 6px;
+        }
+
+        .recipe-card img {
+            border-top-left-radius: 0.375rem;
+            border-top-right-radius: 0.375rem;
+            max-height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .recipe-card img:hover {
+            filter: grayscale(50%);
+            transform: rotate(3deg);
+        }
+
+        .recipe-card-content {
+            padding: 1.25rem;
+        }
+
+        .recipe-card h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1a202c;
+        }
+
+        .recipe-card p {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .recipe-card a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1e40af;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s;
+        }
+
+        .recipe-card a:hover {
+            background-color: #1c2d69;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <span style="font-weight: bold; font-size: 1.5rem; color: white;">EcoPacCalc</span>
+        </div>
+        <div>
+            <a href="popular.html">Popular</a>
+            <a href="form.html">Calculate</a>
+            <a href="../index.html">Home</a>
+            <a href="login.html" style="background-color: white; color: #FFA500;">LogOut</a>
+        </div>
+    </nav>
+    <div class="grid">
+        <!-- Repeat this block for each recipe -->
+        <div class="recipe-card">
+            <img src="../images/paper.jpg" alt="Paper" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Paper</h5>
+                <p>Sustainability: High</p>
+                <a href="info.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/plastic.jpg" alt="Plastic" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Plastic</h5>
+                <p>Sustainability: Low</p>
+                <a href="info1.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/glass.jpg" alt="Glass" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Glass</h5>
+                <p>Sustainability: Medium</p>
+                <a href="info2.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/bioPlastics.png" alt="Bio" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Biodegradable Plastics</h5>
+                <p>Sustainability: Medium</p>
+                <a href="info3.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/paperBoard.jpg" alt="Paper Board" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Paper Board</h5>
+                <p>Sustainability: High</p>
+                <a href="info5.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/metal.jpg" alt="Metal" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Metal</h5>
+                <p>Sustainability: High</p>
+                <a href="info4.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/wood.jpg" alt="Wood" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Wood</h5>
+                <p>Sustainability: Moderate</p>
+                <a href="info6.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="../images/foam.jpg" alt="Foam" />
+            <div class="recipe-card-content">
+                <h5>Packaging Material : Foam</h5>
+                <p>Sustainability: Low</p>
+                <a href="info7.html" class="cursor-pointer">Read more</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add more recipe cards here -->
+
+    </div>
+</body>
+
+</html>

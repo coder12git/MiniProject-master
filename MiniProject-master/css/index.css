@@ -1,0 +1,468 @@
+/*Common CSS for complete site*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.logo img{
+    width: 83%;
+    border: 3px solid black;
+    border-radius: 50px;
+    margin: 17px 42px;
+
+}
+.nav-logo{
+    display: flex;
+    position: absolute;
+    font-size: 2rem;
+    padding: 6%;
+    margin: -66px 85px;
+    color: white;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    list-style: none;
+    width: 70%;
+   
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    padding: 26px 40px;
+    
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color: rgb(161, 227, 81);
+}
+.rightnav{
+    width: 30%;
+    padding: 0 23px;
+    text-align: right;
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 9px;
+}
+.background{
+    background: rgba(0, 0, 0, 0.7) url(../images/bg2.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.sec{
+    height: 100vh;
+}
+.boxmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    max-width: 78%;
+    margin: auto;
+    height: 80%;
+}
+.firsthalf{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.secondhalf{
+width: 40%;
+
+}
+.secondhalf img{
+    width: 75%;
+    border: 37px solid rgb(21, 140, 21);
+    border-radius: 200px;
+    display: block;
+    margin: auto;
+    
+}
+.text-big{
+    font-size: 42px;
+    margin: 15px;
+}
+.text-small{
+    font-size: 23px;
+    margin: 14px;
+}
+.btn{
+    padding: 10px 20px;
+    margin: 8px 13px;
+    border: 2px solid rgb(6, 5, 5);
+    border-radius: 8px;
+    font-size: 14px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+.btn-sm{
+    padding: 3px 10px;
+    vertical-align: middle;
+}
+.btn:hover{
+    background-color: #1f9405;
+}
+
+.about {
+    background: rgb(42, 43, 42);
+    background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(74, 68, 36) 100%);
+    padding: 100px 0 20px 0;
+    text-align: center;
+}
+ 
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+ 
+.about p {
+    font-size: 1rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+}
+ 
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+ 
+.about-img {
+    width: 20rem;
+    height: 20rem;
+ 
+}
+ 
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+ 
+.about-info p {
+    font-size: 1.3rem;
+    margin: 0 2rem;
+    text-align: justify;
+}
+ 
+.bt {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    margin: 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #34972c;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+    border-radius: 4px;
+}
+ 
+.bt:hover {
+    background-color: #145f03;
+}
+
+.team {
+    padding: 30px 0;
+    text-align: center;
+}
+ 
+.team h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+ 
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(129, 145, 92) 100%);
+}
+ 
+.card {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 21rem;
+    height: 32rem;
+    margin-top: 10px;
+}
+ 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+ 
+.card-img {
+    width: 21rem;
+  height: 16rem;
+}
+ 
+.card-img img {
+    width: 83%;
+    height: 129%;
+    object-fit: fill;
+}
+ 
+.card-info button {
+    margin: 2rem 1rem;
+}
+ 
+.card-name {
+    font-size: 2rem;
+  margin: 72px 0px;
+}
+ 
+.card-role {
+    font-size: 1rem;
+  color: #2f2a2a;
+  margin: -42px 0;
+}
+ 
+.card-email {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../images/contact.jpg);
+    background-size: cover;
+}
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+.contact .content p{
+    font-size: 20px;
+    font-weight: 500;
+    color: antiquewhite;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.container .contactinfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactinfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container .contactinfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactinfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+.container .contactinfo .box .text h3{
+    font-weight: 500;
+    color: #80cfee;
+}
+.contactform{
+    width: 42%;
+    padding: 19px 22px;
+    background: #fff;
+    border-radius: 40px;
+    border: 6px solid #c08f42;
+}
+.contactform h2{
+    font-size: 43px;
+  color: #321010;
+  font-weight: 58%;
+  margin: 3px 0px;
+  text-align: center;
+}
+.contactform .inputbox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.item {
+    width: 100%;
+    padding: 12px 0px;
+    font-size: 14px;
+    margin: 11px 0px;
+    border: none;
+    border-bottom: 3px solid #30cdd5;
+    outline: none;
+    resize: none;
+
+}
+.contactform .inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: rgb(23, 24, 24);
+}
+
+.inputbox .error-txt{
+    font-size: 14px;
+  color: red;
+  text-align: left;
+  margin: -8px 0px;
+  display: none;
+}
+.btnO{
+    padding: 4px 26px;
+    margin: 12px 3px;
+    border-radius: 10px;
+    background: #0ef;
+    color: #0e0b0b;
+    box-shadow: 0 0 10px rgb(53, 249, 204);
+}
+.btnO:hover{
+    color: #267961;
+}
+
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background: #0E0921
+  }
+  .footer .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3.5rem;
+    padding: 60px;
+  }
+  .footer-row .footer-col h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .footer-col .links {
+    margin-top: 20px;
+  }
+  .footer-col .links li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .footer-col .links li a {
+    text-decoration: none;
+    color: #8e8c8c;
+  }
+  .footer-col .links li a:hover {
+    color: #fff;
+  }
+  .footer-col p {
+    margin: 20px 0;
+    color: #bfbfbf;
+    max-width: 300px;
+  }
+  .footer-col form {
+    display: flex;
+    gap: 5px;
+  }
+  .footer-col input {
+    height: 42px;
+  border-radius: 10px;
+  background: none;
+  width: 100%;
+  outline: none;
+  border: 2px solid #7489C6;
+  caret-color: #fff;
+  color: #fff;
+  padding-left: 10px;
+
+  }
+  .footer-col input::placeholder {
+    color: #ccc;
+  }
+   .footer-col form button {
+    background: #fff;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+  .footer-col form button:hover {
+    background: #cd942b;
+  }
+  .footer-col .icons {
+    display: flex;
+    margin-top: 30px;
+    gap: 47px;
+    cursor: pointer;
+  }
+  .footer-col .icons i {
+    color: #ffffff;
+  }
+  
+  .footer-col .icons i:hover  {
+    color: #c98c0a;
+  }

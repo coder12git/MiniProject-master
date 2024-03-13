@@ -1,0 +1,27 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin: 2px;
+    border: #0e0d0d; 
+    
+  }
+  
+  .form-container h2{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: red;
+    font-style: italic;
+    font-size: large;
+  } 
+  .form-container p{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: rgb(233, 63, 11);
+    font-style: italic;
+    font-size: large;
+  }
+  

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/new.css">
+    <title>Document</title>
+</head>
+<body style="background-image: url(../images/image1.jpg)">
+    
+    <div class="meta">
+        <h2>ENTER THE FOUR DIGIT VERIFICATION CODE</h2>
+    
+        <form action="#" method="post">
+            <label for="password">VERIFICATION CODE</label>
+            <input tyoe="password" id="password" name="password" required>
+            <button type="submit" onclick="nextpage(event)" >SUBMIT</button>
+        </form>
+    </div>
+</div>
+<script> 
+function Code(min,max){ 
+        var code=max-min+1;
+        var rand=Math.random();
+        var randcode=(rand*code);
+        var round=Math.floor(randcode)
+        var final=round+min;
+        return final;
+} 
+
+console.log(Code(1000,9999))
+    var mid=document.querySelector('input');
+       mid.addEventListener('mouseover',function(event){
+        event.preventDefault();
+        alert(7683);
+        })
+     
+
+function nextpage(event){
+      event.preventDefault(); 
+      window.location.href ="subs.html"; 
+};
+        </script>
+    
+</body>
+</html>
+    
+      

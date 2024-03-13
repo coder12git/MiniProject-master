@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPacCalc</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #FFA500;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #FFA500;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            font-size: larger;
+            font-weight: 600;
+            color: #FFA500;
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        select {
+            border: 1px solid #ADFF2F;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        button {
+            border-radius: 4px;
+            border: 1px solid #ADFF2F;
+            font-weight: bold;
+            background-color: #FFA500;
+            color: white;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FFD700;
+        }
+
+        .download-btn {
+            background-color: #FFA500;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #FFD700;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 5px;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            margin: 0 auto; /* Center the table */
+            width: 80%; /* Adjust the width as needed */
+        }
+
+        th, td {
+            border: 1px solid #FF8400;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F6F1E9;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <span style="font-weight: bold; font-size: 1.5rem; color: white;">EcoPacCalc</span>
+        </div>
+        <div>
+            <a href="popular.html">Popular</a>
+            <a href="form.html">Calculate</a>
+            <a href="../index.html">Home</a>
+            <a href="/" style="background-color: white; color: #FFA500;">LogOut</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="font-size: 2.5rem;">Packaging Material Sustainability Calculator</h1>
+        <form onsubmit="getData()">
+            <label>Select your packaging material</label>
+            <select id="selectedMaterial">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option>Paper</option>
+                <option>Plastic</option>
+                <option>Glass</option>
+                <option>Biodegradable Plastics</option>
+                <option>Metal</option>
+                <option>Paper Board</option>
+            </select>
+            <button type="submit" id="search">Submit</button>
+        </form>
+    </div>
+    <div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="downloadBtn" class="download-btn">Download as PDF</button>
+        </div>
+        <div id="result">
+            <table>
+                <tr>
+                    <th>Sustainability</th>
+                    <th>Carbon Footprint</th>
+                    <th>Recyclability</th>
+                    <th>Biodegradability</th>
+                    <th>Energy Consumption</th>
+                    <th>Water Usage</th>
+                    <th>Raw Material Source</th>
+                    <th>Waste Generation</th>
+                    <th>Environmental Impact Score</th>
+                </tr>
+                <tbody id="table_body">
+                    <tr>
+                        <td id="0"></td>
+                        <td id="2"></td>
+                        <td id="3"></td>
+                        <td id="4"></td>
+                        <td id="5"></td>
+                        <td id="6"></td>
+                        <td id="7"></td>
+                        <td id="8"></td>
+                        <td id="9"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        window.onload = function () {
+            const btn = document.getElementById("downloadBtn");
+            btn.addEventListener("click", () => {
+                const menu = this.document.getElementById("result");
+                const options = {
+                    filename: "menu.pdf",
+                    image: {
+                        type: "jpeg",
+                        quality: 0.98
+                    },
+                    html2canvas: {
+                        scale: 2,
+                        useCORS: true
+                    },
+                    jsPDF: {
+                        format: "letter",
+                        orientation: "landscape"
+                    },
+                };
+                html2pdf().from(menu).set(options).save();
+            });
+        };
+    </script>
+    <script>
+        const getData = () => {
+            event.preventDefault();
+            const res = document.getElementById("selectedMaterial").value;
+            if(res==="Plastic"){
+               document.getElementById("0").innerHTML = "Sustainability: Low";
+            //    document.getElementById("1").innerHTML="Packaging Material : Plastic";
+               document.getElementById("2").innerHTML="Carbon Footprint: 250";
+               document.getElementById("3").innerHTML="Recyclability: 20";
+               document.getElementById("4").innerHTML="Biodegradability: 5";
+               document.getElementById("5").innerHTML="Energy Consumption: 150";
+               document.getElementById("6").innerHTML="Water Usage: 300";
+               document.getElementById("7").innerHTML="Raw Material Source: Petrochemicals";
+               document.getElementById("8").innerHTML="Waste Generation: 15";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 4.2";
+            }
+            if(res==="Paper"){
+               document.getElementById("0").innerHTML = "Sustainability: High";
+            //    document.getElementById("1").innerHTML="Packaging Material : Paper";
+               document.getElementById("2").innerHTML="Carbon Footprint: 150";
+               document.getElementById("3").innerHTML="Recyclability: 80";
+               document.getElementById("4").innerHTML="Biodegradability: 90";
+               document.getElementById("5").innerHTML="Energy Consumption: 200";
+               document.getElementById("6").innerHTML="Water Usage: 500";
+               document.getElementById("7").innerHTML="Raw Material Source: FSC Certified";
+               document.getElementById("8").innerHTML="Waste Generation: 20";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 8.5";
+            }
+            if(res==="Glass"){
+               document.getElementById("0").innerHTML = "Sustainability: Medium";
+            //    document.getElementById("1").innerHTML="Packaging Material : Glass";
+               document.getElementById("2").innerHTML="Carbon Footprint: 180";
+               document.getElementById("3").innerHTML="Recyclability: 70";
+               document.getElementById("4").innerHTML="Biodegradability: 0";
+               document.getElementById("5").innerHTML="Energy Consumption: 300";
+               document.getElementById("6").innerHTML="Water Usage: 800";
+               document.getElementById("7").innerHTML="Raw Material Source: Sand";
+               document.getElementById("8").innerHTML="Waste Generation: 25";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 6.7";
+            }
+            if(res==="Biodegradable Plastics"){
+               document.getElementById("0").innerHTML = "Sustainability: Medium";
+            //    document.getElementById("1").innerHTML="Packaging Material : Biodegradable Plastics";
+               document.getElementById("2").innerHTML="Carbon Footprint: 200";
+               document.getElementById("3").innerHTML="Recyclability: 40";
+               document.getElementById("4").innerHTML="Biodegradability: 80";
+               document.getElementById("5").innerHTML="Energy Consumption: 180";
+               document.getElementById("6").innerHTML="Water Usage: 350";
+               document.getElementById("7").innerHTML="Raw Material Source: Plant-based";
+               document.getElementById("8").innerHTML="Waste Generation: 18";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 7.3";
+            }
+            if(res==="Metal"){
+               document.getElementById("0").innerHTML = "Sustainability: High";
+            //    document.getElementById("1").innerHTML="Packaging Material : Metal";
+               document.getElementById("2").innerHTML="Carbon Footprint: 300";
+               document.getElementById("3").innerHTML="Recyclability: 90";
+               document.getElementById("4").innerHTML="Biodegradability: 10";
+               document.getElementById("5").innerHTML="Energy Consumption: 250";
+               document.getElementById("6").innerHTML="Water Usage: 600";
+               document.getElementById("7").innerHTML="Raw Material Source: Ore Mining";
+               document.getElementById("8").innerHTML="Waste Generation: 30";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 7.8";
+            }
+            if(res==="Paper Board"){
+               document.getElementById("0").innerHTML = "Sustainability: High";
+            //    document.getElementById("1").innerHTML="Packaging Material : Paper Boards";
+               document.getElementById("2").innerHTML="Carbon Footprint: 160";
+               document.getElementById("3").innerHTML="Recyclability: 75";
+               document.getElementById("4").innerHTML="Biodegradability: 85";
+               document.getElementById("5").innerHTML="Energy Consumption: 220";
+               document.getElementById("6").innerHTML="Water Usage: 480";
+               document.getElementById("7").innerHTML="Raw Material Source: FSC Certified";
+               document.getElementById("8").innerHTML="Waste Generation: 22";
+               document.getElementById("9").innerHTML="Environmental Impact Score: 8.1";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
